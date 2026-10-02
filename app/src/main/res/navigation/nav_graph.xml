@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.nunoguerra.preamar.ui.home.HomeFragment"
+        android:label="@string/home_title"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_novaSaida"
+            app:destination="@id/novaSaidaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/saidasFragment"
+        android:name="com.nunoguerra.preamar.ui.saidas.SaidasFragment"
+        android:label="@string/saidas_title"
+        tools:layout="@layout/fragment_saidas">
+        <action
+            android:id="@+id/action_saidas_to_novaSaida"
+            app:destination="@id/novaSaidaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/estatisticasFragment"
+        android:name="com.nunoguerra.preamar.ui.estatisticas.EstatisticasFragment"
+        android:label="@string/estatisticas_title"
+        tools:layout="@layout/fragment_estatisticas" />
+
+    <fragment
+        android:id="@+id/novaSaidaFragment"
+        android:name="com.nunoguerra.preamar.ui.novasaida.NovaSaidaFragment"
+        android:label="@string/nova_saida_title"
+        tools:layout="@layout/fragment_nova_saida" />
+
+</navigation>
