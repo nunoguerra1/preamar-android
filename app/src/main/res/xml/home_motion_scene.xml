@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@id/end"
+        app:duration="1">
+        <!-- Vincula o progresso da transição ao scroll do NestedScrollView:
+             substitui o que seria um GSAP ScrollTrigger na web. -->
+        <OnSwipe
+            app:touchAnchorId="@id/scroll_content"
+            app:touchAnchorSide="top"
+            app:dragDirection="dragUp" />
+    </Transition>
+
+    <!-- Estado inicial: header expandido (320dp), tartaruga grande, título grande -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/header_bg"
+            android:layout_width="0dp"
+            android:layout_height="320dp">
+            <Layout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/dotted_turtle"
+            android:alpha="1"
+            app:layout_constraintTop_toTopOf="@id/header_bg"
+            app:layout_constraintBottom_toBottomOf="@id/header_bg">
+            <CustomAttribute
+                app:attributeName="scaleX"
+                app:customFloatValue="1.0" />
+            <CustomAttribute
+                app:attributeName="scaleY"
+                app:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/title"
+            android:layout_marginTop="56dp">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/subtitle">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- Estado final: header colapsado (110dp), tartaruga reduzida e deslocada (parallax),
+         subtítulo some, título sobe e encolhe sutilmente -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/header_bg"
+            android:layout_width="0dp"
+            android:layout_height="110dp">
+            <Layout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/dotted_turtle"
+            android:alpha="0.35"
+            app:layout_constraintTop_toTopOf="@id/header_bg"
+            app:layout_constraintBottom_toBottomOf="@id/header_bg">
+            <CustomAttribute
+                app:attributeName="scaleX"
+                app:customFloatValue="0.55" />
+            <CustomAttribute
+                app:attributeName="scaleY"
+                app:customFloatValue="0.55" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/title"
+            android:layout_marginTop="40dp">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/subtitle">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>
