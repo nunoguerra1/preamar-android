@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Preamar</string>
+
+    <!-- Navegação -->
+    <string name="nav_home">Início</string>
+    <string name="nav_saidas">Saídas</string>
+    <string name="nav_estatisticas">Estatísticas</string>
+
+    <!-- Home -->
+    <string name="home_title">Preamar</string>
+    <string name="home_subtitle">Previsão de maré e lua para suas saídas costeiras</string>
+    <string name="home_card_next_window_title">Próxima janela favorável</string>
+    <string name="home_card_next_window_body">Calculando a melhor janela com base na atividade selecionada…</string>
+    <string name="home_card_moon_title">Fase lunar atual</string>
+    <string name="home_card_moon_body">O cálculo astronômico será conectado na Entrega 3</string>
+    <string name="home_card_last_trip_title">Última saída registrada</string>
+    <string name="home_card_last_trip_empty">Você ainda não registrou nenhuma saída</string>
+    <string name="home_fab_new_trip">Nova saída</string>
+
+    <!-- Saídas -->
+    <string name="saidas_title">Suas saídas</string>
+    <string name="saidas_empty">Nenhuma saída registrada ainda.\nToque em “Nova saída” para começar.</string>
+
+    <!-- Nova saída -->
+    <string name="nova_saida_title">Nova saída</string>
+    <string name="nova_saida_local">Local</string>
+    <string name="nova_saida_atividade">Atividade</string>
+    <string name="nova_saida_data">Data e horário</string>
+    <string name="nova_saida_obs">Observações</string>
+    <string name="nova_saida_salvar">Salvar saída</string>
+
+    <!-- Estatísticas -->
+    <string name="estatisticas_title">Estatísticas</string>
+    <string name="estatisticas_empty">Suas estatísticas pessoais aparecerão aqui conforme você registrar saídas.</string>
+
+    <string name="cd_dotted_turtle">Ilustração pontilhada de uma tartaruga marinha</string>
+    <string name="cd_dotted_ray">Ilustração pontilhada de uma arraia</string>
+</resources>

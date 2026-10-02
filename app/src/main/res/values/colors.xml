@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base marítima escura -->
+    <color name="ocean_deep">#0B3D5C</color>
+    <color name="ocean_deeper">#072A40</color>
+    <color name="ocean_abyss">#051C2C</color>
+
+    <!-- Texto / superfícies claras -->
+    <color name="cream">#F7F1E3</color>
+    <color name="cream_dim">#E9E1CC</color>
+
+    <!-- Acento -->
+    <color name="teal_accent">#0E7C7B</color>
+    <color name="teal_accent_dark">#0A5B5A</color>
+
+    <!-- Destaque quente (CTA, estados ativos) -->
+    <color name="sand_coral">#E8A662</color>
+
+    <color name="text_on_dark">#F7F1E3</color>
+    <color name="text_on_light">#0B2430</color>
+    <color name="text_muted">#6E7E85</color>
+
+    <color name="divider">#D9D0BA</color>
+</resources>
