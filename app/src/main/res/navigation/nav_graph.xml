@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_home_to_novaSaida"
             app:destination="@id/novaSaidaFragment" />
+        <action
+            android:id="@+id/action_home_to_detalhe"
+            app:destination="@id/saidaDetalheFragment" />
     </fragment>
 
     <fragment
@@ -23,6 +26,9 @@
         <action
             android:id="@+id/action_saidas_to_novaSaida"
             app:destination="@id/novaSaidaFragment" />
+        <action
+            android:id="@+id/action_saidas_to_detalhe"
+            app:destination="@id/saidaDetalheFragment" />
     </fragment>
 
     <fragment
@@ -36,5 +42,15 @@
         android:name="com.nunoguerra.preamar.ui.novasaida.NovaSaidaFragment"
         android:label="@string/nova_saida_title"
         tools:layout="@layout/fragment_nova_saida" />
+
+    <fragment
+        android:id="@+id/saidaDetalheFragment"
+        android:name="com.nunoguerra.preamar.ui.saidas.SaidaDetalheFragment"
+        android:label="@string/detalhe_title"
+        tools:layout="@layout/fragment_saida_detalhe">
+        <argument
+            android:name="saidaId"
+            app:argType="long" />
+    </fragment>
 
 </navigation>

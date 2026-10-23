@@ -6,16 +6,14 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nunoguerra.preamar.R;
 
-/**
- * Lista de saídas registradas pelo usuário. O RecyclerView já está com
- * LayoutManager configurado; o Adapter + Room entram na Entrega 3/4 (CRUD).
- */
+/** Lista as saídas gravadas no Room; toque abre o detalhe. */
 public class SaidasFragment extends Fragment {
 
     public SaidasFragment() {
@@ -26,19 +24,27 @@ public class SaidasFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_saidas);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        // TODO (Entrega 3): recyclerView.setAdapter(new SaidaAdapter(...));
+        SaidaViewModel viewModel = new ViewModelProvider(requireActivity()).get(SaidaViewModel.class);
 
-        View emptyState = view.findViewById(R.id.empty_state);
-        // TODO (Entrega 3): alternar a visibilidade de emptyState vs recyclerView
-        // conforme o resultado do SaidaDao.getAll() observado via ViewModel.
-        emptyState.setVisibility(View.VISIBLE);
+        RecyclerView recycler = view.findViewById(R.id.recycler_saidas);
+        View vazio = view.findViewById(R.id.empty_state);
 
-        View fabNewTrip = view.findViewById(R.id.fab_new_trip);
-        fabNewTrip.setOnClickListener(v ->
-                Navigation.findNavController(v)
-                        .navigate(R.id.action_saidas_to_novaSaida)
-        );
+        SaidaAdapter adapter = new SaidaAdapter(saida -> {
+            Bundle args = new Bundle();
+            args.putLong("saidaId", saida.id);
+            Navigation.findNavController(view).navigate(R.id.action_saidas_to_detalhe, args);
+        });
+        recycler.setLayoutManager(new LinearLayoutManager(requireContext()));
+        recycler.setAdapter(adapter);
+
+        viewModel.saidas.observe(getViewLifecycleOwner(), lista -> {
+            adapter.submitList(lista);
+            boolean semItens = lista == null || lista.isEmpty();
+            vazio.setVisibility(semItens ? View.VISIBLE : View.GONE);
+            recycler.setVisibility(semItens ? View.GONE : View.VISIBLE);
+        });
+
+        view.findViewById(R.id.fab_new_trip).setOnClickListener(v ->
+                Navigation.findNavController(v).navigate(R.id.action_saidas_to_novaSaida));
     }
 }

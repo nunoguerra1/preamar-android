@@ -4,15 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cream"
+    android:background="@drawable/bg_cream_textured"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="32dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="48dp"
         android:paddingBottom="40dp">
 
         <TextView
@@ -20,48 +21,107 @@
             android:layout_height="wrap_content"
             android:text="@string/nova_saida_title"
             android:textAppearance="@style/TextAppearance.Preamar.Display"
-            android:textColor="@color/text_on_light"
-            android:textSize="26sp" />
+            android:textColor="@color/ocean_deep"
+            android:textSize="30sp" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_local"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:hint="@string/nova_saida_local"
             app:boxStrokeColor="@color/teal_accent">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_local"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Atividade: preenchido com um AutoCompleteTextView quando o motor de
-             recomendação (Entrega 3) definir a lista de atividades suportadas -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_atividade"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/nova_saida_atividade"
             app:boxStrokeColor="@color/teal_accent">
+
             <AutoCompleteTextView
+                android:id="@+id/actv_atividade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_data"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/nova_saida_data"
             app:boxStrokeColor="@color/teal_accent">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="false" />
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Condições calculadas automaticamente para a data/hora escolhida -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Preamar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.nunoguerra.preamar.ui.widget.MoonPhaseView
+                    android:id="@+id/moon_preview"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:contentDescription="@string/cd_moon_phase" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nova_saida_condicoes_titulo"
+                        android:textAppearance="@style/TextAppearance.Preamar.Caption" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_condicoes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Preamar.CardTitle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nova_saida_condicoes_auto"
+                        android:textAppearance="@style/TextAppearance.Preamar.Caption" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -70,22 +130,25 @@
             android:layout_marginTop="16dp"
             android:hint="@string/nova_saida_obs"
             app:boxStrokeColor="@color/teal_accent">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_obs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minLines="3"
                 android:gravity="top"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="3" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_salvar_saida"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="54dp"
             android:layout_marginTop="28dp"
             android:backgroundTint="@color/ocean_deep"
             android:text="@string/nova_saida_salvar"
-            app:cornerRadius="14dp" />
+            android:textColor="@color/cream"
+            app:cornerRadius="16dp" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

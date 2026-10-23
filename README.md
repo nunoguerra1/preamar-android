@@ -103,3 +103,34 @@ real pra compilar), então o Gradle Sync pode pedir pequenos ajustes de
 versão de plugin na primeira abertura — é normal e o próprio Android Studio
 resolve. Se algum XML do MotionLayout der erro de atributo, o Preview do
 Android Studio aponta a linha exata; é rápido de ajustar.
+
+## Estado atual: Entrega Parcial 3 — Desenvolvimento Intermediário
+
+**Funcionalidades do sistema**
+- Motor de fase lunar (`MoonPhaseCalculator`): ciclo sinódico médio, idade, iluminação e 8 fases.
+- Motor de maré (`TideCalculator`): modelo semidiurno (~12h25) com sizígia/quadratura,
+  estado da maré (alta, baixa, enchendo, vazando) e lista de preamares/baixa-mares.
+- Recomendação (`Recomendador`): nota 0–100 por atividade a cada 30 min e melhores janelas das próximas 48 h.
+- Registro de saídas (Room): ao salvar, as condições de lua/maré são calculadas e gravadas automaticamente.
+- Persistência 100% local (Room, banco `preamar.db`, versão 2).
+
+**Integração entre telas**
+- Home → Nova saída (FAB) → salva no Room → Saídas (lista) e Home (última saída) atualizam via LiveData.
+- Saídas/Home → Detalhe da saída (argumento `saidaId`) → excluir → volta para a lista.
+- Barra inferior some nas telas secundárias (nova saída e detalhe).
+
+**Interface**
+- Cabeçalho colapsável (CollapsingToolbarLayout) com tartaruga pontilhada em parallax.
+- Gráfico de maré e fase da lua desenhados em Canvas (`TideChartView`, `MoonPhaseView`).
+- Chips de atividade, cards com entrada animada, textura de pontos no fundo.
+
+## Limitações assumidas (honestidade técnica)
+- A maré é uma **estimativa astronômica aproximada** (sem batimetria nem dados de estação); não
+  substitui a tábua de marés da Marinha (DHN). A longitude vem do fuso do aparelho.
+- A fase lunar usa o ciclo médio (erro de algumas horas).
+- As regras de recomendação são heurísticas por atividade.
+
+## Próximas entregas
+- **Entrega 4:** edição de saídas, validações completas, painel de estatísticas (fase lunar x saídas), polimento visual.
+- **Final:** documentação, vídeo (até 5 min).
+

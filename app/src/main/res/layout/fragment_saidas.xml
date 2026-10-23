@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cream">
+    android:background="@drawable/bg_cream_textured">
 
     <View
         android:id="@+id/top_bar"
@@ -31,7 +31,8 @@
         android:id="@+id/recycler_saidas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingHorizontal="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:paddingTop="16dp"
         android:paddingBottom="96dp"
         android:clipToPadding="false"
@@ -79,6 +80,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="92dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
