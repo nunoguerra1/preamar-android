@@ -6,8 +6,13 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Saida.class}, version = 1, exportSchema = false)
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+@Database(entities = {Saida.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
+
+    public static final ExecutorService executor = Executors.newFixedThreadPool(2);
 
     private static volatile AppDatabase INSTANCE;
 
@@ -21,6 +26,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                     context.getApplicationContext(),
                                     AppDatabase.class,
                                     "preamar.db")
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
