@@ -17,10 +17,14 @@
         <item name="android:statusBarColor">@color/ocean_deeper</item>
         <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
 
+        <!-- Corpo de texto: sans-serif padrão do sistema, limpo e legível.
+             Upgrade opcional pra "Inter" pelo Resource Manager ▸ Fonts (ver README). -->
         <item name="android:fontFamily">sans-serif</item>
         <item name="fontFamily">sans-serif</item>
     </style>
 
+    <!-- Título editorial grande — trocar fontFamily por @font/archivo_black depois de
+         adicioná-la via Android Studio ▸ Resource Manager ▸ Fonts (ver README) -->
     <style name="TextAppearance.Preamar.Display" parent="TextAppearance.Material3.DisplaySmall">
         <item name="android:fontFamily">sans-serif-black</item>
         <item name="fontFamily">sans-serif-black</item>
@@ -55,5 +59,43 @@
         <item name="backgroundTint">@color/sand_coral</item>
         <item name="tint">@color/ocean_deeper</item>
     </style>
+
+
+    <!-- Título expandido/colapsado do cabeçalho da Home -->
+    <style name="TextAppearance.Preamar.ExpandedTitle" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textSize">44sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="TextAppearance.Preamar.CollapsedTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextAppearance.Preamar.CardTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text_on_light</item>
+    </style>
+
+    <style name="TextAppearance.Preamar.Big" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/ocean_deep</item>
+    </style>
+
+    <style name="Widget.Preamar.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_bg_state</item>
+        <item name="android:textColor">@color/chip_text_state</item>
+        <item name="chipStrokeColor">@color/divider</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="checkedIconVisible">false</item>
+    </style>
+
 
 </resources>

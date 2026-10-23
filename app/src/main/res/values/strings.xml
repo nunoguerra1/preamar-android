@@ -9,14 +9,19 @@
 
     <!-- Home -->
     <string name="home_title">Preamar</string>
-    <string name="home_subtitle">Previsão de maré e lua para suas saídas costeiras</string>
-    <string name="home_card_next_window_title">Próxima janela favorável</string>
-    <string name="home_card_next_window_body">Calculando a melhor janela com base na atividade selecionada…</string>
-    <string name="home_card_moon_title">Fase lunar atual</string>
-    <string name="home_card_moon_body">O cálculo astronômico será conectado na Entrega 3</string>
+    <string name="home_subtitle">Maré e lua calculadas no seu aparelho, sem internet</string>
+    <string name="home_atividade_label">Para qual atividade?</string>
+    <string name="home_card_janelas_title">Melhores janelas · próximas 48 h</string>
+    <string name="home_card_mare_title">Maré · próximas 24 h</string>
+    <string name="home_card_lua_title">Lua agora</string>
     <string name="home_card_last_trip_title">Última saída registrada</string>
     <string name="home_card_last_trip_empty">Você ainda não registrou nenhuma saída</string>
     <string name="home_fab_new_trip">Nova saída</string>
+    <string name="home_disclaimer">Estimativa astronômica aproximada. Não substitui a tábua de marés oficial da Marinha do Brasil (DHN) para navegação ou segurança.</string>
+    <string name="home_nota_format">Nota %1$d/100</string>
+    <string name="home_lua_detalhe">%1$d%% iluminada · %2$s dias de idade</string>
+    <string name="home_mare_agora">Agora: %1$s · %2$s</string>
+    <string name="home_sem_janelas">Sem janelas boas encontradas</string>
 
     <!-- Saídas -->
     <string name="saidas_title">Suas saídas</string>
@@ -27,8 +32,28 @@
     <string name="nova_saida_local">Local</string>
     <string name="nova_saida_atividade">Atividade</string>
     <string name="nova_saida_data">Data e horário</string>
-    <string name="nova_saida_obs">Observações</string>
+    <string name="nova_saida_obs">Observações (o que viu, como estava o mar…)</string>
     <string name="nova_saida_salvar">Salvar saída</string>
+    <string name="nova_saida_condicoes_titulo">Condições calculadas para esse horário</string>
+    <string name="nova_saida_condicoes_auto">Elas serão salvas automaticamente com a saída.</string>
+    <string name="erro_local">Informe o local da saída</string>
+    <string name="erro_atividade">Escolha uma atividade</string>
+    <string name="saida_salva">Saída registrada!</string>
+
+    <!-- Detalhe -->
+    <string name="detalhe_title">Detalhes da saída</string>
+    <string name="detalhe_condicoes">Condições no momento da saída</string>
+    <string name="detalhe_excluir">Excluir saída</string>
+    <string name="detalhe_excluir_titulo">Excluir esta saída?</string>
+    <string name="detalhe_excluir_msg">Essa ação não pode ser desfeita.</string>
+    <string name="detalhe_cancelar">Cancelar</string>
+    <string name="detalhe_confirmar_excluir">Excluir</string>
+    <string name="detalhe_sem_obs">Sem observações</string>
+    <string name="detalhe_fase">Fase da lua</string>
+    <string name="detalhe_ilum">Iluminação</string>
+    <string name="detalhe_idade">Idade da lua</string>
+    <string name="detalhe_mare_tipo">Tipo de maré</string>
+    <string name="detalhe_mare_estado">Estado da maré</string>
 
     <!-- Estatísticas -->
     <string name="estatisticas_title">Estatísticas</string>
@@ -36,4 +61,6 @@
 
     <string name="cd_dotted_turtle">Ilustração pontilhada de uma tartaruga marinha</string>
     <string name="cd_dotted_ray">Ilustração pontilhada de uma arraia</string>
+    <string name="cd_moon_phase">Fase atual da lua</string>
+    <string name="cd_tide_chart">Gráfico da maré estimada</string>
 </resources>

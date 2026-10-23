@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base marítima escura -->
+    <!-- Base marítima escura (equivalente ao verde-oliva escuro do Elo, no tom do tema) -->
     <color name="ocean_deep">#0B3D5C</color>
     <color name="ocean_deeper">#072A40</color>
     <color name="ocean_abyss">#051C2C</color>
@@ -9,7 +9,7 @@
     <color name="cream">#F7F1E3</color>
     <color name="cream_dim">#E9E1CC</color>
 
-    <!-- Acento -->
+    <!-- Acento (mesmo teal do Elo — continuidade de marca) -->
     <color name="teal_accent">#0E7C7B</color>
     <color name="teal_accent_dark">#0A5B5A</color>
 
@@ -21,4 +21,8 @@
     <color name="text_muted">#6E7E85</color>
 
     <color name="divider">#D9D0BA</color>
+
+    <!-- Cores por atividade e estados -->
+    <color name="moss">#5B8C5A</color>
+    <color name="danger">#B3261E</color>
 </resources>
